@@ -173,7 +173,7 @@ void searchAndDelete(LIST &l){
         cout << endl <<  "[ERROR] EMPTY LIST." << endl;
     else{
         NODE *p = l.pHead;
-		while(p != NULL){
+		while(p->pNext != NULL){
 			if(p->pNext->Data == n){
 				deleteList(p, l);
 				return;
@@ -181,7 +181,7 @@ void searchAndDelete(LIST &l){
 			p = p->pNext;
 		}
 
-	    if(p == NULL)
+	    if(p == l.pTail)
 	        cout << endl << "[ERROR] CANNOT FIND ELEMENT: " << n << endl;
 	}
 }
