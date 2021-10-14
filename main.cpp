@@ -27,7 +27,7 @@ typedef List LIST;
 
 void init(LIST &l){
 	l.pHead = new NODE;
-    l.pHead->pNext = l.pTail = NULL;
+  l.pHead->pNext = l.pTail = NULL;
 }
 
 void deleteList(NODE *position, LIST &l){
@@ -110,10 +110,10 @@ void input_reverse(LIST &l){
 void output(LIST l){
 	cout << " <--- PRINT LIST ---> " << endl;
 	int i = 1;
-    for(NODE* p = l.pHead->pNext; p != NULL; p = p->pNext){
-        cout << "ELEMENT NO." << i << ": " << p->Data << endl;
-        i++;
-    }
+  for(NODE* p = l.pHead->pNext; p != NULL; p = p->pNext){
+      cout << "ELEMENT NO." << i << ": " << p->Data << endl;
+      i++;
+  }
 }
 
 void giaiphong(LIST &l){
