@@ -70,6 +70,7 @@ void addLast(LIST &l, NODE* new_ele){
     }
 }
 
+// REQ. 2
 void input(LIST &l){
     int n;
     cout << "HOW MANY ELEMENT DO YOU WANT TO ADD? ";
@@ -85,6 +86,23 @@ void input(LIST &l){
     }
 }
 
+//REQ. 2
+void input_reverse(LIST &l){
+    int n;
+    cout << "HOW MANY ELEMENT DO YOU WANT TO ADD? ";
+    cin >> n;
+    init(l);
+    for(int i = 0; i < n; i++){
+    	cout << "ELEMENT NO." << i+1 << ": "; 
+        elementType k;
+        cin >> k;
+        NODE* x = getNode(k);
+        addHead(l, x);
+      //       addLast(l, x);
+    }
+}
+
+//REQ. 2
 void output(LIST l){
 	cout << " <--- PRINT LIST ---> " << endl;
 	int i = 1;
@@ -103,6 +121,7 @@ void giaiphong(LIST &l){
 	}
 }
 
+//REQ. 3
 void sort(LIST &l){
     elementType temp;
     for(NODE *p = l.pHead->pNext; p != NULL; p = p->pNext){
@@ -116,6 +135,7 @@ void sort(LIST &l){
     }
 }
 
+//REQ. 4
 //Them 1 phan tu vao danh sach co thu tu
 void insert(LIST &l){
     elementType n;
@@ -164,6 +184,7 @@ void insertPos(LIST &l){
 }
 */
 
+//REQ. 5
 void searchAndDelete(LIST &l){
 	elementType n;
 	cout << "WHICH ELEMENT DO YOU WANT TO DELETE? ";
@@ -186,8 +207,9 @@ void searchAndDelete(LIST &l){
 	}
 }
 
+//REQ. 7
 void deleteDouble(LIST &l){
-    NODE* current = l.pHead;
+    NODE* current = l.pHead->pNext;
     NODE* next_next;
 
     if (current == NULL)
@@ -206,6 +228,7 @@ void deleteDouble(LIST &l){
     }
 }
 
+//REQ. 6
 void insertListIntoOrderedList(LIST &l){
 	int n;
 	elementType new_ele;
@@ -222,17 +245,23 @@ void insertListIntoOrderedList(LIST &l){
 
 int main(){
     LIST l;
+    LIST l2;
     int n, size;
     
     cout << "------- REQ. 2 -------" << endl;
-	input(l);
+	  input(l);
     output(l);
 
-    cout << endl << "------- REQ. 3B -------" << endl;
+    cout << "[WARNING] ALL REQ. IN THIS PROGRAM WILL NOT BE APPLIED TO THIS LIST" << endl;
+    cout << "------- REQ. 2 INSERT IN REVERSED ORDER LIST 2 -------" << endl;
+	  input_reverse(l2);
+    output(l2);
+
+    cout << endl << "------- REQ. 3B LIST 1 -------" << endl;
     sort(l);
     output(l);
 
-    cout << endl << "------- REQ. 4 -------" << endl;
+    cout << endl << "------- REQ. 4 LIST 1 -------" << endl;
     insert(l);
     output(l);
 
@@ -242,22 +271,23 @@ int main(){
 //    output(l);  
 	
 	
-    cout << endl << "------- REQ. 5 -------" << endl;
+    cout << endl << "------- REQ. 5 LIST 1 -------" << endl;
     searchAndDelete(l);
     cout << endl << "LIST 1 AFTER SEARCH AND DELETE" << endl;
     output(l);
     
-    cout << endl << "------- REQ. 6 -------" << endl;
+    cout << endl << "------- REQ. 6 LIST 1 -------" << endl;
     insertListIntoOrderedList(l);
     cout << endl << "LIST 1 AFTER INSERT ANOTHER LIST" << endl;
     output(l);
     
-    cout << endl << "------- REQ. 7 -------" << endl;
+    cout << endl << "------- REQ. 7 LIST 1 -------" << endl;
     deleteDouble(l);
     cout << endl << "--- LIST 1 AFTER DELETE DUPLICATED ELEMENTS ---" << endl;
     output(l);
 
 
     giaiphong(l);
+    giaiphong(l2);
     return 0;
 }
