@@ -75,11 +75,13 @@ void input(LIST &l){
     int n;
     cout << "HOW MANY ELEMENT DO YOU WANT TO ADD? ";
     cin >> n;
+    cin.ignore();
     init(l);
     for(int i = 0; i < n; i++){
     	cout << "ELEMENT NO." << i+1 << ": "; 
         elementType k;
-        cin >> k;
+ //       cin >> k;
+        getline(cin, k);
         NODE* x = getNode(k);
 //        addHead(l, x);
         addLast(l, x);
@@ -91,11 +93,13 @@ void input_reverse(LIST &l){
     int n;
     cout << "HOW MANY ELEMENT DO YOU WANT TO ADD? ";
     cin >> n;
+    cin.ignore();
     init(l);
     for(int i = 0; i < n; i++){
     	cout << "ELEMENT NO." << i+1 << ": "; 
         elementType k;
-        cin >> k;
+//        cin >> k;
+        getline(cin, k);
         NODE* x = getNode(k);
         addHead(l, x);
       //       addLast(l, x);
@@ -140,7 +144,8 @@ void sort(LIST &l){
 void insert(LIST &l){
     elementType n;
     cout << "TYPE IN NEW ELEMENT: ";
-    cin >> n;
+//    cin >> n;
+    getline(cin, n);
     NODE *x = getNode(n);
     NODE *p = l.pHead->pNext;
     NODE *q = p;
@@ -188,8 +193,9 @@ void insertPos(LIST &l){
 void searchAndDelete(LIST &l){
 	elementType n;
 	cout << "WHICH ELEMENT DO YOU WANT TO DELETE? ";
-	cin >> n;
-	
+//	cin >> n;
+  getline(cin, n);
+  
     if(l.pHead->pNext == NULL)
         cout << endl <<  "[ERROR] EMPTY LIST." << endl;
     else{
@@ -234,7 +240,7 @@ void insertListIntoOrderedList(LIST &l){
 	elementType new_ele;
 	cout << "HOW MANY ELEMENT DO YOU WANT TO INSERT? ";
 	cin >> n;
-//	cin.ignore();
+	cin.ignore();
 	for(int i = 0; i < n; i++){
 		cout << "INPUT ELEMENT NO." << i+1 << ": " << endl;
 ////		getline(cin, new_ele);
