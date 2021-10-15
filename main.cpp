@@ -26,7 +26,7 @@ typedef List LIST;
 
 
 void init(LIST &l){
-	l.pHead = new NODE;
+  l.pHead = new NODE;
   l.pHead->pNext = l.pTail = NULL;
 }
 
@@ -108,8 +108,8 @@ void input_reverse(LIST &l){
 
 //REQ. 2
 void output(LIST l){
-	cout << " <--- PRINT LIST ---> " << endl;
-	int i = 1;
+  cout << " <--- PRINT LIST ---> " << endl;
+  int i = 1;
   for(NODE* p = l.pHead->pNext; p != NULL; p = p->pNext){
       cout << "ELEMENT NO." << i << ": " << p->Data << endl;
       i++;
@@ -200,17 +200,17 @@ void searchAndDelete(LIST &l){
         cout << endl <<  "[ERROR] EMPTY LIST." << endl;
     else{
         NODE *p = l.pHead;
-		while(p->pNext != NULL){
-			if(p->pNext->Data == n){
-				deleteList(p, l);
-				return;
-			}
-			p = p->pNext;
-		}
+        while(p->pNext != NULL){
+    			if(p->pNext->Data == n){
+    				deleteList(p, l);
+    				return;
+    			}
+  			p = p->pNext;
+  		}
 
 	    if(p == l.pTail)
 	        cout << endl << "[ERROR] CANNOT FIND ELEMENT: " << n << endl;
-	}
+  	}
 }
 
 //REQ. 7
@@ -255,12 +255,12 @@ int main(){
     int n, size;
     
     cout << "------- REQ. 2 -------" << endl;
-	  input(l);
+    input(l);
     output(l);
 
-    cout << "[WARNING] ALL REQ. IN THIS PROGRAM WILL NOT BE APPLIED TO THIS LIST" << endl;
+    cout << endl << "[WARNING] ALL REQ. IN THIS PROGRAM WILL NOT BE APPLIED TO LIST 2" << endl;
     cout << "------- REQ. 2 INSERT IN REVERSED ORDER LIST 2 -------" << endl;
-	  input_reverse(l2);
+    input_reverse(l2);
     output(l2);
 
     cout << endl << "------- REQ. 3B LIST 1 -------" << endl;
