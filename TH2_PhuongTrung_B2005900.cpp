@@ -191,7 +191,7 @@ void insertPos(LIST &l){
 
 //REQ. 5
 void searchAndDelete(LIST &l){
-	elementType n;
+  elementType n;
 	cout << "WHICH ELEMENT DO YOU WANT TO DELETE? ";
 //	cin >> n;
   getline(cin, n);
